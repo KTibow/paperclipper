@@ -215,6 +215,9 @@
       "baseUrl": "https://kendell.usw-18.palantirfoundry.com/api/v2/llm/proxy/anthropic",
       "api": "anthropic-messages",
       "apiKey": "$PALANTIR_API_KEY",
+      "compat": {
+        "supportsEagerToolInputStreaming": false
+      },
       "headers": {
         "Authorization": "Bearer $PALANTIR_API_KEY"
       },
