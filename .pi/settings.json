@@ -1,6 +1,7 @@
 {
-  "defaultProvider": "palantir",
+  "defaultProvider": "palantir-anthropic",
   "defaultModel": "claude-opus-4-8",
+  "defaultThinkingLevel": "xhigh",
   "retry": {
     "enabled": true,
     "maxRetries": 20,
