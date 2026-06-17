@@ -41,6 +41,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           PALANTIR_API_KEY: ${{ secrets.PALANTIR_API_KEY }}
           PI_CODING_AGENT_DIR: ${{ github.workspace }}/.pi
+          PI_CACHE_RETENTION: none
           PI_SKIP_VERSION_CHECK: 1
           PI_TELEMETRY: 0
           MODEL: ${{ inputs.model }}
