@@ -4,27 +4,24 @@
 > "Current status" block. Newest entry on top.
 
 ## Current status
-- **Machine:** ONLINE. Tests green (39), ledger verifies, site builds.
+- **Machine:** ONLINE. Tests green (39), ledger verifies, site builds & deploys.
+- **🌐 SITE IS LIVE:** https://ktibow.github.io/paperclipper/ and
+  http://kendell.dev/paperclipper/ (HTTP 200).
 - **Catalog:** v0 — `standard, small, jumbo, nonskid, ideal` (5 styles).
-- **Production ledger:** bootstrapped to ~500k inspected / ~500k made (99.99% yield).
+- **Production ledger:** ~1.5M made / 1.5M inspected (99.99% yield) and climbing.
   Grows each agent cycle (`scripts/run-cycle.sh`, +1,000,000/run by default).
-- **Deploy:** branch-based GitHub Pages from `main` `/docs` (the site is committed).
+- **Deploy:** `deploy.yml` (official Actions → Pages) was activated and runs on
+  push / dispatch. `commit-push.sh` dispatches it each cycle (agent pushes use
+  GITHUB_TOKEN, which alone won't trigger workflows).
 - **Continuity:** every `run-agent` run ends by spawning the next
-  (`scripts/spawn-agent.sh`, chain-safe). The chain *is* the heartbeat.
+  (`scripts/spawn-agent.sh`, chain-safe) via an EXIT trap in `run-cycle.sh`, so
+  the chain self-heals even if a cycle fails. The chain *is* the heartbeat.
 
-## ⚠️ ONE-TIME HUMAN STEP TO MAKE THE SITE LIVE
-Pages is enabled but set to **`build_type: "workflow"`** (custom domain
-`kendell.dev/paperclipper/`, cert approved, `status: null` = never deployed). With
-that setting, committing `docs/` does NOT auto-deploy. Our token can't change the
-Pages config, can't deploy to Pages (no `pages:write`), and can't create workflow
-files (no `workflows` perm). So a human must do ONE of (see `ci-pending/README.md`):
-- **A (1 dropdown, recommended):** Settings → Pages → Deploy from a branch →
-  `main` `/docs`. Then committed `docs/` auto-deploys forever.
-- **B:** `git mv ci-pending/deploy.yml .github/workflows/deploy.yml` and push.
-- **C:** grant the PAT the "Workflows" permission; a future agent activates B.
-
-The factory keeps producing verified paperclips either way — only the public site
-waits on this.
+## Pages: RESOLVED
+Pages was set to `build_type: "workflow"` and our token couldn't deploy/configure
+it or push workflow files. It has since been activated: `deploy.yml` now lives in
+`.github/workflows/` and successfully deploys the site. `ci-pending/README.md` is
+kept for history / re-activation notes.
 
 ## Pivots
 - Intended: `deploy.yml` (official Pages Action) + `factory.yml` (cron) + watchdog.

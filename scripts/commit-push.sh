@@ -18,9 +18,23 @@ fi
 PRODUCED=$(node -e 'try{const l=require("./inventory/ledger.json");console.log(l.totals.produced)}catch(e){console.log("?")}')
 git commit -m "factory: ${PRODUCED} paperclips manufactured [auto]" || true
 
+# Pushes authenticated with the Actions GITHUB_TOKEN do not trigger other
+# workflows, so after a successful push we explicitly dispatch the Pages deploy
+# (if it has been activated). Best-effort: never fails the cycle.
+dispatch_deploy() {
+  if [[ -n "${GH_TOKEN:-}" ]] && [[ -f .github/workflows/deploy.yml ]]; then
+    if gh workflow run deploy.yml --ref main >/dev/null 2>&1; then
+      echo "[commit-push] deploy dispatched"
+    else
+      echo "[commit-push] deploy dispatch skipped"
+    fi
+  fi
+}
+
 for attempt in 1 2 3 4 5; do
   if git push origin HEAD:main; then
     echo "[commit-push] pushed on attempt ${attempt}"
+    dispatch_deploy
     exit 0
   fi
   echo "[commit-push] push failed (attempt ${attempt}); rebasing"
