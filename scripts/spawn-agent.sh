@@ -21,13 +21,17 @@ if [[ ! -f "$PROMPT_FILE" ]]; then
   exit 1
 fi
 
-pending=$(gh run list --workflow="$WORKFLOW" --limit 30 \
+# Only skip if a successor is already QUEUED (waiting to start). We deliberately
+# ignore in_progress runs: a predecessor that is still finishing must not stop
+# its successor from queuing the next link, or the chain would die whenever two
+# runs briefly overlap.
+queued=$(gh run list --workflow="$WORKFLOW" --limit 30 \
   --json databaseId,status \
-  -q "[.[]|select((.status==\"in_progress\" or .status==\"queued\") and (.databaseId|tostring)!=\"$SELF\")]|length" \
+  -q "[.[]|select(.status==\"queued\" and (.databaseId|tostring)!=\"$SELF\")]|length" \
   2>/dev/null || echo 0)
 
-if [[ "${pending:-0}" -gt 0 ]]; then
-  echo "[spawn-agent] a successor already exists ($pending pending); not dispatching"
+if [[ "${queued:-0}" -gt 0 ]]; then
+  echo "[spawn-agent] a successor is already queued ($queued); not dispatching"
   exit 0
 fi
 
