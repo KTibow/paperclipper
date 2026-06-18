@@ -43,9 +43,15 @@ No dependencies — just Node ≥ 20.
   (`scripts/spawn-agent.sh`, chain-safe). `scripts/run-cycle.sh` does the whole
   heartbeat in one shot.
 
-> **One-time setup:** enable Pages once at *Settings → Pages → Deploy from a
-> branch → `main` `/docs`*. (The CI token can't create workflow files or enable
-> Pages via API, so this is the single manual step — see `STATE.md` › Pivots.)
+> **One-time setup to make the site live:** Pages is set to `build_type:
+> "workflow"`, and the CI token can't deploy to Pages, change its config, or
+> create workflow files. Do ONE of: (A) *Settings → Pages → Deploy from a branch
+> → `main` `/docs`* (recommended, one dropdown), (B) `git mv
+> ci-pending/deploy.yml .github/workflows/deploy.yml && git push`, or (C) grant
+> the PAT the "Workflows" permission. See `ci-pending/README.md`. The factory
+> keeps making verified paperclips regardless; only the public page waits.
+>
+> Live site (after setup): **http://kendell.dev/paperclipper/**
 
 ## Scalability & honesty
 The count can grow without bound because we never store individual clips — only

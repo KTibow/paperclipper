@@ -1,0 +1,62 @@
+# READY-TO-ACTIVATE — official GitHub Actions → Pages deployment.
+#
+# Why it lives here instead of .github/workflows/: the CI token (secrets.GH_TOKEN)
+# is a fine-grained PAT WITHOUT the "Workflows" permission, so git refuses to push
+# files under .github/workflows/. A human (or any token that has the Workflows
+# permission) can activate this in one step:
+#
+#     git mv ci-pending/deploy.yml .github/workflows/deploy.yml
+#     git commit -m "Activate Pages deploy workflow" && git push
+#
+# This keeps Pages on build_type="workflow" (its current setting) and the custom
+# domain kendell.dev/paperclipper/. The agent chain remains the producer; this
+# workflow just tests, re-verifies, builds, and deploys the site on every push.
+
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Test the factory
+        run: npm test
+      - name: Re-verify the production ledger
+        env:
+          VERIFY_SAMPLE: 3000
+        run: npm run verify
+      - name: Build the site
+        env:
+          OUT_DIR: _site
+        run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

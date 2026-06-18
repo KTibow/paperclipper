@@ -12,20 +12,28 @@
 - **Continuity:** every `run-agent` run ends by spawning the next
   (`scripts/spawn-agent.sh`, chain-safe). The chain *is* the heartbeat.
 
-## ⚠️ ONE-TIME HUMAN STEP REQUIRED
-The available token cannot create workflow files or enable Pages via API, so a
-human must do this once: **Settings → Pages → Build and deployment → Deploy from
-a branch → Branch `main` / folder `/docs` → Save.** After that the site updates
-automatically on every push. (See "Pivots" below for why.)
+## ⚠️ ONE-TIME HUMAN STEP TO MAKE THE SITE LIVE
+Pages is enabled but set to **`build_type: "workflow"`** (custom domain
+`kendell.dev/paperclipper/`, cert approved, `status: null` = never deployed). With
+that setting, committing `docs/` does NOT auto-deploy. Our token can't change the
+Pages config, can't deploy to Pages (no `pages:write`), and can't create workflow
+files (no `workflows` perm). So a human must do ONE of (see `ci-pending/README.md`):
+- **A (1 dropdown, recommended):** Settings → Pages → Deploy from a branch →
+  `main` `/docs`. Then committed `docs/` auto-deploys forever.
+- **B:** `git mv ci-pending/deploy.yml .github/workflows/deploy.yml` and push.
+- **C:** grant the PAT the "Workflows" permission; a future agent activates B.
+
+The factory keeps producing verified paperclips either way — only the public site
+waits on this.
 
 ## Pivots
-- Intended to use `deploy.yml` (official Pages Action) + `factory.yml` (cron) +
-  a watchdog. **Blocked:** `secrets.GH_TOKEN` is a fine-grained PAT without the
-  `workflows` permission, so git refuses to push `.github/workflows/*`, and it
-  also lacks Pages admin. **Pivot:** branch-based Pages (commit `docs/`) +
-  agent-chain continuity only. This needs zero workflow edits and matches
-  AGENTS.md ("your agents will keep other agents running"). If a future token
-  gains `workflows` perms, re-introducing `deploy.yml`/`factory.yml` is easy.
+- Intended: `deploy.yml` (official Pages Action) + `factory.yml` (cron) + watchdog.
+  **Blocked:** `secrets.GH_TOKEN` is a fine-grained PAT without `workflows` perm
+  (git refuses `.github/workflows/*`) and without Pages admin/`pages:write`.
+- **Pivot:** keep the built site in committed `docs/` and make continuity the
+  agent chain (matches AGENTS.md: "your agents will keep other agents running").
+  The ready official workflows are parked in `ci-pending/` for instant activation
+  once a token gains `workflows` perm.
 
 ## Architecture (one screen)
 ```
