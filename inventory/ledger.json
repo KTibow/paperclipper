@@ -1,25 +1,25 @@
 {
   "version": 1,
   "createdAt": "2026-06-18T02:02:39.252Z",
-  "updatedAt": "2026-06-18T02:02:42.058Z",
-  "nextSeed": 500000,
+  "updatedAt": "2026-06-18T02:25:11.353Z",
+  "nextSeed": 1500000,
   "totals": {
-    "produced": 499973,
-    "inspected": 500000,
-    "scrap": 27
+    "produced": 1499918,
+    "inspected": 1500000,
+    "scrap": 82
   },
   "byStyle": {
-    "standard": 99999,
-    "small": 99984,
-    "jumbo": 100000,
-    "nonskid": 99990,
-    "ideal": 100000
+    "standard": 299995,
+    "small": 299953,
+    "jumbo": 300000,
+    "nonskid": 299970,
+    "ideal": 300000
   },
   "scrapReasons": {
-    "no-fusion": 18,
-    "clamping-function": 9
+    "no-fusion": 57,
+    "clamping-function": 25
   },
-  "chainChecksum": "d28224de",
+  "chainChecksum": "402db179",
   "archive": {
     "batchCount": 0,
     "produced": 0,
@@ -503,6 +503,494 @@
       "scrapReasons": {},
       "checksum": "99faacbf",
       "timestamp": "2026-06-18T02:02:42.058Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 20,
+      "seedStart": 500000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49997,
+      "scrap": 3,
+      "passRate": 0.99994,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9999,
+        "jumbo": 10000,
+        "nonskid": 9998,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "clamping-function": 2,
+        "no-fusion": 1
+      },
+      "checksum": "b0ac6808",
+      "timestamp": "2026-06-18T02:25:06.341Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 21,
+      "seedStart": 550000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49997,
+      "scrap": 3,
+      "passRate": 0.99994,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 9999,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "clamping-function": 1,
+        "no-fusion": 2
+      },
+      "checksum": "845cc662",
+      "timestamp": "2026-06-18T02:25:06.627Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 22,
+      "seedStart": 600000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49999,
+      "scrap": 1,
+      "passRate": 0.99998,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9999,
+        "jumbo": 10000,
+        "nonskid": 10000,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 1
+      },
+      "checksum": "39981f6b",
+      "timestamp": "2026-06-18T02:25:06.894Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 23,
+      "seedStart": 650000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49999,
+      "scrap": 1,
+      "passRate": 0.99998,
+      "byStyle": {
+        "standard": 9999,
+        "small": 10000,
+        "jumbo": 10000,
+        "nonskid": 10000,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 1
+      },
+      "checksum": "6a69afd6",
+      "timestamp": "2026-06-18T02:25:07.157Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 24,
+      "seedStart": 700000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49996,
+      "scrap": 4,
+      "passRate": 0.99992,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9997,
+        "jumbo": 10000,
+        "nonskid": 9999,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 3,
+        "clamping-function": 1
+      },
+      "checksum": "4e7a8867",
+      "timestamp": "2026-06-18T02:25:07.420Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 25,
+      "seedStart": 750000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49995,
+      "scrap": 5,
+      "passRate": 0.9999,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 9997,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 3,
+        "clamping-function": 2
+      },
+      "checksum": "f723f6db",
+      "timestamp": "2026-06-18T02:25:07.685Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 26,
+      "seedStart": 800000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49998,
+      "scrap": 2,
+      "passRate": 0.99996,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 10000,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 2
+      },
+      "checksum": "1f1b59de",
+      "timestamp": "2026-06-18T02:25:07.945Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 27,
+      "seedStart": 850000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49997,
+      "scrap": 3,
+      "passRate": 0.99994,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 9999,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 2,
+        "clamping-function": 1
+      },
+      "checksum": "065378f5",
+      "timestamp": "2026-06-18T02:25:08.202Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 28,
+      "seedStart": 900000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49998,
+      "scrap": 2,
+      "passRate": 0.99996,
+      "byStyle": {
+        "standard": 10000,
+        "small": 10000,
+        "jumbo": 10000,
+        "nonskid": 9998,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "clamping-function": 2
+      },
+      "checksum": "b8c0b74e",
+      "timestamp": "2026-06-18T02:25:08.462Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 29,
+      "seedStart": 950000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 50000,
+      "scrap": 0,
+      "passRate": 1,
+      "byStyle": {
+        "standard": 10000,
+        "small": 10000,
+        "jumbo": 10000,
+        "nonskid": 10000,
+        "ideal": 10000
+      },
+      "scrapReasons": {},
+      "checksum": "da3d9532",
+      "timestamp": "2026-06-18T02:25:08.737Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 30,
+      "seedStart": 1000000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49997,
+      "scrap": 3,
+      "passRate": 0.99994,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 9999,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 3
+      },
+      "checksum": "4d379509",
+      "timestamp": "2026-06-18T02:25:08.996Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 31,
+      "seedStart": 1050000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49999,
+      "scrap": 1,
+      "passRate": 0.99998,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9999,
+        "jumbo": 10000,
+        "nonskid": 10000,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 1
+      },
+      "checksum": "aeb48400",
+      "timestamp": "2026-06-18T02:25:09.269Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 32,
+      "seedStart": 1100000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49996,
+      "scrap": 4,
+      "passRate": 0.99992,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 9998,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 3,
+        "clamping-function": 1
+      },
+      "checksum": "da791f18",
+      "timestamp": "2026-06-18T02:25:09.528Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 33,
+      "seedStart": 1150000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49997,
+      "scrap": 3,
+      "passRate": 0.99994,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9999,
+        "jumbo": 10000,
+        "nonskid": 9998,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 2,
+        "clamping-function": 1
+      },
+      "checksum": "a39cad19",
+      "timestamp": "2026-06-18T02:25:09.786Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 34,
+      "seedStart": 1200000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49998,
+      "scrap": 2,
+      "passRate": 0.99996,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 10000,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 2
+      },
+      "checksum": "adcdf942",
+      "timestamp": "2026-06-18T02:25:10.052Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 35,
+      "seedStart": 1250000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49998,
+      "scrap": 2,
+      "passRate": 0.99996,
+      "byStyle": {
+        "standard": 10000,
+        "small": 10000,
+        "jumbo": 10000,
+        "nonskid": 9998,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "clamping-function": 2
+      },
+      "checksum": "01faea18",
+      "timestamp": "2026-06-18T02:25:10.312Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 36,
+      "seedStart": 1300000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49998,
+      "scrap": 2,
+      "passRate": 0.99996,
+      "byStyle": {
+        "standard": 10000,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 10000,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 2
+      },
+      "checksum": "2fca7dfe",
+      "timestamp": "2026-06-18T02:25:10.576Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 37,
+      "seedStart": 1350000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49995,
+      "scrap": 5,
+      "passRate": 0.9999,
+      "byStyle": {
+        "standard": 9999,
+        "small": 9997,
+        "jumbo": 10000,
+        "nonskid": 9999,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 4,
+        "clamping-function": 1
+      },
+      "checksum": "027a73ff",
+      "timestamp": "2026-06-18T02:25:10.833Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 38,
+      "seedStart": 1400000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49995,
+      "scrap": 5,
+      "passRate": 0.9999,
+      "byStyle": {
+        "standard": 9999,
+        "small": 9997,
+        "jumbo": 10000,
+        "nonskid": 9999,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 4,
+        "clamping-function": 1
+      },
+      "checksum": "10e6d6c1",
+      "timestamp": "2026-06-18T02:25:11.094Z",
+      "runId": "27730746558",
+      "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
+      "actor": "KTibow"
+    },
+    {
+      "id": 39,
+      "seedStart": 1450000,
+      "count": 50000,
+      "catalog": 0,
+      "made": 49996,
+      "scrap": 4,
+      "passRate": 0.99992,
+      "byStyle": {
+        "standard": 9999,
+        "small": 9998,
+        "jumbo": 10000,
+        "nonskid": 9999,
+        "ideal": 10000
+      },
+      "scrapReasons": {
+        "no-fusion": 3,
+        "clamping-function": 1
+      },
+      "checksum": "e0f1834f",
+      "timestamp": "2026-06-18T02:25:11.353Z",
       "runId": "27730746558",
       "runUrl": "https://github.com/KTibow/paperclipper/actions/runs/27730746558",
       "actor": "KTibow"
